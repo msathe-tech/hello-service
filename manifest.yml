@@ -4,4 +4,5 @@ applications:
   memory: 1G
   instances: 1
   path: target/hello-service-0.0.1-SNAPSHOT.jar
-  random-route: true
+  #routes:
+   # - route: hello-service.[your domain]
