@@ -8,14 +8,15 @@ import org.slf4j.Logger;
 public class HelloController {
     private static Logger log = LoggerFactory.getLogger(HelloController.class);
 
-    @GetMapping("/")
-    public String home() {
-        return "Hello Pivots!";
+
+    @GetMapping("/service/greet/{name}")
+    public String sayHello(@PathVariable String name) {
+        return String.format("Hello %s! \n Use ACME's predictive stock recommendation and retire early. \n", name);
     }
 
-    @GetMapping("/{name}")
-    public String sayHello(@PathVariable String name) {
-        return String.format("Hello %s, you are in the Pivotal cloud!", name);
+    @GetMapping("/service/quote")
+    public String sayHello() {
+        return String.format("Today's top stock: PVTL");
     }
 
     @GetMapping("/kill-instance")

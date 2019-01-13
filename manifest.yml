@@ -1,7 +1,12 @@
 ---
 applications:
-- name: hello-service
+- name: acme-service
   memory: 1G
   instances: 1
   path: target/hello-service-0.0.1-SNAPSHOT.jar
-  random-route: true
+
+  #env:
+  #  JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+
+  routes:
+  - route: acme-service.apps.pcfone.io
