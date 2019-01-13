@@ -1,3 +1,4 @@
+#Steps to create Docker image and cf push
 cd docker
 docker build --rm -t msathepivotal/myfirst-boot-on-docker:latest .
 docker images
